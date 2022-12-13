@@ -1,7 +1,6 @@
 package com.dji.sample.component;
 
 import com.dji.sample.component.redis.RedisConst;
-import com.dji.sample.component.redis.RedisOpsUtils;
 import com.dji.sample.manage.service.IDeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,8 +27,8 @@ public class ApplicationBootInitial implements CommandLineRunner {
     public void run(String... args) throws Exception {
         int start = RedisConst.DEVICE_ONLINE_PREFIX.length();
 
-        RedisOpsUtils.getAllKeys(RedisConst.DEVICE_ONLINE_PREFIX + "*")
-                .forEach(key -> deviceService.subscribeTopicOnline(key.substring(start)));
+       // RedisOpsUtils.getAllKeys(RedisConst.DEVICE_ONLINE_PREFIX + "*")
+        //        .forEach(key -> deviceService.subscribeTopicOnline(key.substring(start)));
 
     }
 }
